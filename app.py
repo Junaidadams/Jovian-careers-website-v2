@@ -39,3 +39,5 @@ def list_jobs():
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug = True)
+
+# mailto:hello@jovian.ai?subject=Application for {{jobs['title']}}
