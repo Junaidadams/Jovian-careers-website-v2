@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, text
 
-db_connection_string  = "mysql+pymysql://8rrg1t084f9cx635zqhl:pscale_pw_kuDzXO6pVFP4ZRhqJGDqb1HSxVfz8E6tLpzSevDpzRN@aws.connect.psdb.cloud/joviancareers?charset=utf8mb4"
+db_connection_string  = "mysql+pymysql://uvc61wgaht368k3g7w72:pscale_pw_DEewrtx7jdlqYzG1hmc2B38k9T2JCKQSVqciEjBHH9M@aws.connect.psdb.cloud/joviancareers?charset=utf8mb4"
 
 # Not sure how to encode sever password/username
 
@@ -24,3 +24,13 @@ def load_job_from_db(id):
             return None
         else:
             return dict(rows[0])
+
+def add_application_to_db(job_id, data):
+    with engine.connect() as conn:
+        query = text("INSERT INTO applications (job_id, full_name, email, linked_in, cv_link) VALUES (job_id, :full_name, :e-mail, :linked-in, :cv_link)")
+        conn.execute(query,
+                    job_id=job_id, 
+                    full_name=data['full_name'],
+                    email=data['e-mail'],
+                    linkedin=data['linked-in'],
+                    cv_link=data['cv_link'])
