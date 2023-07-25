@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, text
 
-db_connection_string  = "mysql+pymysql://uvc61wgaht368k3g7w72:pscale_pw_DEewrtx7jdlqYzG1hmc2B38k9T2JCKQSVqciEjBHH9M@aws.connect.psdb.cloud/joviancareers?charset=utf8mb4"
+db_connection_string  = "mysql+pymysql://q2sdu7nxkl7xy8vsmbhk:pscale_pw_hcYEYbRfpo9AA7WOy62WUA9f981HdaTn2j9S3RtGsGq@aws.connect.psdb.cloud/joviancareers?charset=utf8mb4"
 
 # Not sure how to encode sever password/username
 
